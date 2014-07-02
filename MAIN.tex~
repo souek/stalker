@@ -1,0 +1,121 @@
+\documentclass[11pt, openany, a4paper, twocolumn,
+landscape]{stalker}
+\setcounter{secnumdepth}{-3}%wyłącza numery sekcji, podsekcji i tak dalej
+%----------------used packages-------
+\usepackage{subfiles}
+% \usepackage{blindtext}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX]{polski}
+\usepackage{fullpage}
+\usepackage{enumitem}
+\usepackage[letterspace=100]{microtype}
+\usepackage{graphicx}
+\usepackage{nowidow}
+%\usepackage{multicol}
+% \usepackage{vwcol}
+%\usepackage{xcolor, color}
+%\usepackage{showframe}
+% \usepackage{parskip}
+% \usepackage[defaultlines=2, all]{nowidow}
+% \usepackage{fontspec}
+% \usepackage[draft]{impnattypo}
+%---global style definition----------
+% \raggedbottom
+% \setlength{\columnsep}{1.2em}
+\setlength{\columnsep}{3em}
+\setlength{\parskip}{.6em plus.2em minus.2em}
+% \setlength{\columnseprule}{.0001pt}
+% \renewcommand\columnseprulecolor{\color{gray}}
+\linespread{1.0}%interline
+\setlength\parindent{0em}%paragraph indent
+\renewcommand{\partname}{}
+\renewcommand{\chaptername}{}
+% \renewcommand*\familydefault{\sfdefault}
+% \raggedbottom
+% \newcommand{\rozdzial{}}{section*\textls{}}
+% \newcommand{\yyy}[1]{\textls[40]{#1}}%rozstrzelenie
+% \usepackage{tocloft} \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+%-----titlepage----------------------
+\author{zebrał sou}
+\title
+{\small{zbiór opowiadań z forum}\\[5ex]
+\Huge\textls{stalker.pl}}
+\date{}
+%------dialogs definition------------
+\newenvironment{dialog}%
+{\begin{list}{}%
+{\setlength{\itemsep}{0pt plus 0.5pt minus 1pt}%
+\setlength{\leftmargin}{1.em}%
+\setlength{\topsep}{0pt plus 0.5pt minus 1pt}%
+\setlength{\parsep}{0pt plus 0.5pt minus 1pt}%
+\setlength{\partopsep}{0pt plus 0.5pt minus 1pt}%
+}\raggedright
+}%
+{\end{list}}
+\newcommand{\sd}{\begin{dialog}}
+\newcommand{\qd}{\end{dialog}}
+\newcommand\xx{\item[--]}
+%----useful shortcuts------------
+\newcommand\mm{\hspace{0ex}}
+\newcommand\x{~--~}
+\def\3k{.\kern0.12em.\kern0.12em.}%...
+\newcommand\dd{\vspace{.5em plus.1em minus.1em}}
+\newcommand{\qm}{\qd}
+\newcommand{\sx}{\sd \xx}
+\newcommand{\oc}{\onecolumn\chapter}
+\newcommand{\ts}{\twocolumn\subfile}
+\newcommand{\ro}[1]{\section*{\centering{#1}}}
+
+%--------------------------------
+\newcommand{\autor}[2]{\onecolumn\chapter [#1 -- informacje o
+autorze]{#1}
+    \subfile{#2/#2_o}}
+\newcommand{\opowiadanie}[3]{
+    \oc[\hspace{3em}#1]{#1}
+      \subfile{#3/#2_o}
+      \ts{#3/#2}}
+
+%------indent in end of last line
+% \newcommand\pp{{%
+% \abovedisplayshortskip0pt \belowdisplayshortskip-\baselineskip
+% \abovedisplayskip0pt \belowdisplayskip-\baselineskip
+%  $$\global\dimen1\predisplaysize\global\advance\dimen1 -2em$$}%
+% \noindent\hspace*{\dimen1}}
+\def\pp{\unskip \bgroup
+                 \vadjust{\vskip\parskip}\dimen0 .015625\hsize
+                 \def~{\hskip0pt\hbox{\hskip\dimen0}}%
+                 \edef~{~~~~}\edef~{~~~~}~~~~%
+                 \hskip0pt \vadjust{\nobreak}%
+                \egroup \ignorespaces }%
+
+%-----długość ostatniej linii
+% \parfillskip=\hsize minus\hsize
+% \advance\parfillskip
+% -1\parindent minus-1\parindent
+% \parfillskip = .9\hsize minus .9\hsize
+% \parfillskip\hsize
+% \advance\parfillskip by -6em
+% \advance\parfillskip 0pt minus \hsize
+% \advance\parfillskip -1.5em minus -1em
+%
+% \setlength{\parfillskip}{0em \@plus 2fil}
+% \parfillskip=5em  % 15em plus 5em minus 1em
+
+% \hyphenation{sza-ry}
+% \usepackage{tocstyle}
+% \usetocstyle{allwithdot}
+\makeatletter
+\renewcommand{\@pnumwidth}{1.74em}
+\renewcommand{\@tocrmarg}{2.55em}
+\renewcommand{\@dotsep}{-1}
+\makeatother
+\usepackage{tocloft}
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+\graphicspath{ {/home/sou/stalker.pl/images} }
+
+\newcommand{\di}[2]{\textit{{\Large{#1}}#2}}
+\begin{document}
+coś w rodzaju pliku CSS :)
+\end{document}

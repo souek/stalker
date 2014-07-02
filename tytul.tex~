@@ -1,0 +1,31 @@
+\documentclass[MAIN.tex]{subfiles}
+\begin{document}
+\begin{titlepage}
+\vspace*{20ex}
+\begin{center}
+\begin{minipage}{0.4\textwidth}
+zbiór opowiadań z forum\\
+\Huge\textls{stalker.pl}
+\end{minipage}
+\end{center}
+\vspace{10em}
+\hfill\begin{minipage}{\dimexpr\textwidth-24em}
+\begin{flushleft}
+Gizbarus\\
+KOSHI\\
+Marcel\\
+
+Voldi\\[1em]
+%Ric\\[1em]
+zebrał\\
+sou\\
+\xdef\tpd{\the\prevdepth}
+\end{flushleft}
+\end{minipage}
+\vfill
+\begin{flushleft}
+kompilacja z\\
+\today
+\end{flushleft}
+\end{titlepage}
+\end{document}

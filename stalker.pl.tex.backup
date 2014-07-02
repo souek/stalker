@@ -1,0 +1,39 @@
+\documentclass[MAIN.tex]{subfiles}
+\begin{document}
+\subfile{tytul}
+\tableofcontents
+
+\onecolumn
+\chapter[Voldi -- informacje o autorze]{Voldi}
+\subfile{Voldi/voldi_o}
+\chapter{W krainie suchych liści}
+\subfile{Voldi/w_krainie_suchych_lisci_o}
+\twocolumn
+\subfile{Voldi/w_krainie_suchych_lisci}
+\onecolumn
+\chapter{O jeden blok za daleko}
+\subfile{Voldi/o_jeden_blok_za_daleko_o}
+\twocolumn
+\subfile{Voldi/o_jeden_blok_za_daleko}
+\onecolumn
+\chapter[KOSHI -- informacje o autorze ]{KOSHI}
+\subfile{KOSHI/koshi_o}
+\chapter{Kodeks Hammurabiego}
+\subfile{KOSHI/bandyckie_opowiesci_o}
+\twocolumn
+\subfile{KOSHI/bandyckie_opowiesci}
+\onecolumn
+\chapter[Ric - informacje o autorze]{Ric}
+\subfile{Ric/ric_o.tex}
+\chapter{15000 rubli}
+\subfile{Ric/15000_rubli_o}
+\twocolumn
+\subfile{Ric/15000_rubli}
+\onecolumn
+\chapter[Gizbarus - informacje o autorze]{Gizbarus}
+\subfile{Gizbarus/gizbarus_o}
+\chapter{Samotność w zonie}
+\subfile{Gizbarus/samotnosc_w_zonie_o}
+\twocolumn
+\subfile{Gizbarus/samotnosc_w_zonie}
+\end{document}
