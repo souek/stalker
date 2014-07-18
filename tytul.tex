@@ -1,23 +1,23 @@
 \documentclass[./MAIN.tex]{subfiles}
 \begin{document}
 \thispagestyle{empty}
-\onecolumn
-\center
-\begin{tabular}{clp{6em}}
-\includegraphics[width=.6\hsize, clip = true, trim = 50 170 60 180]{logo_b.png}
-& {\color{BrickRed}\rule{.5ex}{3.56em}} & Voldi\newline 
-KOSHI\newline 
-Ric\newline 
-Gizbarus\newline 
-Marcel\newline 
-Tormentor\newline 
-Dziab\newline 
-saku\newline 
-Canthir\newline 
-Valentino\\[12em] 
-\multicolumn{3}{c}{kompilacja z \today} \\ 
-\multicolumn{3}{c}{zebrał: sou} \\ 
-\end{tabular} 
-
-\twocolumn
+\twocolumn[{%
+\centering
+\begin{tabular}{l!\krecha r}
+\multirow{10}{*}{\includegraphics[width=.8\hsize, clip = true, trim = 50 170 60 180]{logo_b.png}} &Voldi\\
+& KOSHI \\
+& Ric \\
+& Gizbarus \\
+& Marcel \\
+& Tormentor \\
+& Dziab Dziab \\
+& saku \\
+& Canthir \\
+& Valentino \\  
+\multicolumn{2}{c}{kompilacja z \today} \\[12em]
+% \multicolumn{2}{c}{kompilacja z \today} \\ 
+\multicolumn{2}{c}{zebrał: sou} \\ 
+\end{tabular}
+% 
+}]
 \end{document}
