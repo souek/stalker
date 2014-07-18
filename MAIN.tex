@@ -9,10 +9,12 @@
 % \usepackage{garamond}
 \usepackage[OT4]{fontenc}
 % 
-% \usepackage{lmodern}
+\usepackage{lmodern}
+%
+% \usepackage[contents=Confidential,color=blue]{background}
 % 
-\usepackage[urw-garamond]{mathdesign}
-\usepackage{pslatex}
+% \usepackage[urw-garamond]{mathdesign}
+% \usepackage{pslatex}
 % \usepackage[MeX]{polski}
 % \usepackage{fullpage}
 \usepackage{enumitem}
@@ -79,17 +81,14 @@
 \begin{minipage}{#1}\em
 \begin{flushleft}
 }
-% W koronach wiecznych dębów\\
-% Wiatr cicho łka\\
-% Pośród groźnych obłoków\\
-% Ponure oblicze Peruna
+% 
 {
 \end{flushleft}
 \end{minipage}
 \end{center}
  \vspace{.5ex}
 }
-
+% 
 \newenvironment{wier}[1][14em]{
 % \vspace{.5ex}
 \begin{center}
@@ -133,9 +132,11 @@
 \newcommand{\sx}{\sd \xx}
 \newcommand{\oc}{\onecolumn\chapter}
 \newcommand{\ts}{\twocolumn\subfile}
-\newcommand{\ro}[1]{\section*{\centering{#1}}}
+\newcommand{\ro}[1]{
+\section*{\centering{
+\colorbox{BrickRed}{
+\color{White}{#1\ }}}}}
 \newcommand{\podro}[1]{\subsection*{\centering{#1}}}
-
 %--------------------------------
 \newcommand{\autor}[2]{\onecolumn\chapter [#1 -- informacje o
 autorze]{
@@ -168,20 +169,20 @@ autorze]{
 % \small Frakcja: Powinność\\[.5ex]
 % Ulubiona broń: Akm 74/2
 % }
-
+% 
 %------indent in end of last line
 % \newcommand\pp{{%
 % \abovedisplayshortskip0pt \belowdisplayshortskip-\baselineskip
 % \abovedisplayskip0pt \belowdisplayskip-\baselineskip
 %  $$\global\dimen1\predisplaysize\global\advance\dimen1 -2em$$}%
 % \noindent\hspace*{\dimen1}}
-\def\pp{\unskip \bgroup
-                 \vadjust{\vskip\parskip}\dimen0 .015625\hsize
-                 \def~{\hskip0pt\hbox{\hskip\dimen0}}%
-                 \edef~{~~~~}\edef~{~~~~}~~~~%
-                 \hskip0pt \vadjust{\nobreak}%
-                \egroup \ignorespaces }%
-
+% \def\pp{\unskip \bgroup
+%                  \vadjust{\vskip\parskip}\dimen0 .015625\hsize
+%                  \def~{\hskip0pt\hbox{\hskip\dimen0}}%
+%                  \edef~{~~~~}\edef~{~~~~}~~~~%
+%                  \hskip0pt \vadjust{\nobreak}%
+%                 \egroup \ignorespaces }%
+% 
 %-----długość ostatniej linii
 % \parfillskip=\hsize minus\hsize
 % \advance\parfillskip
@@ -194,7 +195,7 @@ autorze]{
 %
 % \setlength{\parfillskip}{0em \@plus 2fil}
 % \parfillskip=5em  % 15em plus 5em minus 1em
-
+% 
 % \hyphenation{sza-ry}
 % \usepackage{tocstyle}
 % \usetocstyle{allwithdot}
