@@ -11,14 +11,35 @@
 % 
 \usepackage{lmodern}
 %
+\newenvironment{piwiersz}[2]
+{
+\begin{verse}%[\versewidth]
+% \poemlines{3}
+% \flushleft
+\indentpattern{
+314159 26535 89793 23846 26433 83279 50288 41971 69399 37510 58209 74944 59230 78164 06286 20899 86280 34825 34211 70679 82148 08651 32823 06647 09384 46095 50582 23172 53594 08128 48111 74502 84102 70193 85211 05559 64462 29489 54930 38196
+}
+\begin{patverse}
+\it{\bukwa{#1}~#2}
+}
+{
+\end{patverse}
+\end{verse}
+}
+\newcommand{\spi}{\begin{piwiersz}}
+\newcommand{\qpi}{\end{piwiersz}}
+% 
 % \usepackage[contents=Confidential,color=blue]{background}
 % 
 % \usepackage[urw-garamond]{mathdesign}
 % \usepackage{pslatex}
 % \usepackage[MeX]{polski}
 % \usepackage{fullpage}
+\usepackage{verse}
 \usepackage{enumitem}
-% \usepackage[letterspace=100]{microtype}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[letterspace=100]{microtype}
 \usepackage{graphicx}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 % \usepackage{tgheros} 
@@ -46,7 +67,7 @@
 % \renewcommand*\familydefault{\sfdefault}
 \raggedbottom
 % \newcommand{\rozdzial{}}{section*\textls{}}
-% \newcommand{\yyy}[1]{\textls[40]{#1}}%rozstrzelenie
+\newcommand{\yyy}[1]{\textls[140]{#1}}%rozstrzelenie
 % \usepackage{tocloft} \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 % żywa pagina 
 % \usepackage{stalker}
@@ -114,8 +135,9 @@
 % }\raggedright
 % }%
 % {\end{list}}
+\newcommand{\kolorek}[1][BrickRed]{\color{#1}}
 %--------------------
-\newcommand{\krecha}{{\color{BrickRed}\vrule width 8pt}
+\newcommand{\krecha}{{\kolorek\vrule width 8pt}
 % {\color{white}\vrule width 4pt}
 }
 \usepackage{multirow}
@@ -141,23 +163,57 @@
 \colorbox{BrickRed}{
 \color{White}{#1\ }}}}}
 \newcommand{\podro}[1]{\subsection*{\centering{#1}}}
+\newcommand{\lro}[1]{
+\section*{\flushright{
+\colorbox{BrickRed}{
+\color{White}{#1\ }}}}}
+\newcommand{\lpodro}[1]{\subsection*{\flushright{#1}}}
 %--------------------------------
-\newcommand{\autor}[2]{\onecolumn\chapter [#1 -- informacje o
-autorze]{
-\parbox[l] {.15\textwidth}{\includegraphics[height = 3.56em]{#2/#2}}
-\parbox[c]{.01\textwidth} {\color{BrickRed}\rule{.5ex}{3.56em}}
-\parbox[l]{.2\textwidth}{
-{\Huge #1}\\[1ex]
-\small
-\subfile{#2/#2_o_f}
+% \newcommand{\autor}[2]{\onecolumn\chapter [#1 -- informacje o
+% autorze]{
+% \parbox[l] {.15\textwidth}{\includegraphics[height = 3.56em]{#2/#2}}
+% \parbox[c]{.01\textwidth} {\kolorek\rule{.5ex}{3.56em}}
+% \parbox[l]{.2\textwidth}{
+% \\[1ex]
+% \small
+% \subfile{#2/#2_o_f}
+% }}}
 % \small Frakcja: Powinność\\[.5ex]
 % Ulubiona broń: Akm 74/2
-}
+% 
+% 
+\newcommand{\red}[1]{
+{{
+{
+\kolorek{#1}}}}}
+% 
+% 
+\usepackage{lipsum}
+\usepackage{tabularx}
+\newcommand{\autor}[2]{\onecolumn\chapter [#1 -- informacje o
+autorze]{
+\begin{minipage}[c]{0.15\textwidth}
+\includegraphics{#2/#2}
+% {\kolorek\rule{.5ex}{3.56em}
+\end{minipage}
+% {\kolorek\rule{.5ex}{3.56em}
+% \begin{minipage}[c]{0.01\textwidth}
+% {\kolorek\rule{.5ex}{3.56em}
+% \end{minipage}
+\begin{minipage}[c]{0.3\textwidth}
+{{{\Huge #1}}
+\\
+\small
+\subfile{#2/#2_o_f}}
+\end{minipage}
+}}
+% 
+% 
 \renewcommand{\chaptermark}[1]{%
 \markboth{#1}{}}
-}
+% }
 %     \subfile{#2/#2_o}
-    }
+%     }
 % \newcommand{\autor}[2]{\onecolumn\chapter [#1 -- informacje o
 % autorze]{#1}
 %     \subfile{#2/#2_o}}
@@ -165,6 +221,8 @@ autorze]{
     \oc[\hspace{3em}#1]{#1}
       \subfile{#3/#2_o}
       \ts{#3/#2}}
+\newcommand{\bukwa}[1]{\lettrine[lines=2]{#1}{}}      
+      
 % \chapter[Test chapter]{
 % \parbox[l] {.15\textwidth}{\includegraphics[height = 3.56em]{#2/#2}}
 % \parbox[c]{.01\textwidth} {\color{red}\rule{.5ex}{3.56em}}
@@ -175,6 +233,7 @@ autorze]{
 % }
 % 
 %------indent in end of last line
+% \usepackage{verse}
 % \newcommand\pp{{%
 % \abovedisplayshortskip0pt \belowdisplayshortskip-\baselineskip
 % \abovedisplayskip0pt \belowdisplayskip-\baselineskip
@@ -208,6 +267,7 @@ autorze]{
 % \renewcommand{\@tocrmarg}{2.55em}
 % \renewcommand{\@dotsep}{-11}
 % \makeatother
+\usepackage{lettrine}
 \usepackage{tocloft}
 \renewcommand{\cftchapdotsep}{\cftdotsep}
 \graphicspath{ {/home/sou/stalker.pl/images} }
